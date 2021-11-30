@@ -1,3 +1,3 @@
 # RopstenPad
 
-Front-end to my Blockchain developer bootcamp final project!
+Front-end for my Blockchain developer bootcamp final project!
