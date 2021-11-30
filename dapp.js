@@ -171,25 +171,6 @@ const LaunchpadDealABI = [
 		"inputs": [
 			{
 				"internalType": "uint256",
-				"name": "_amount",
-				"type": "uint256"
-			}
-		],
-		"name": "getNum",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
 				"name": "",
 				"type": "uint256"
 			}
@@ -280,7 +261,13 @@ const LaunchpadDealABI = [
 			}
 		],
 		"name": "setParameters",
-		"outputs": [],
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
@@ -299,7 +286,7 @@ const LaunchpadDealABI = [
 	}
 ]
 
-const LaunchpadDealAddress = "0x703760136Da7483255271B6968aA504cA10961E2";
+const LaunchpadDealAddress = "0xF3be1424Ed8ffdb457a3D0E3DeE8EF4577724a19";
 
 const pTokenABI = [
 	{
@@ -547,6 +534,7 @@ const mmAuthorizeButton = document.getElementById("authorize");
 const getToken = document.getElementById("get-token");
 const mmPaymentForm = document.getElementById("mm-payment-form");
 const mmSuccessGif = document.getElementById("payment-success");
+const showAddress = document.getElementById("contract-address");
 const ptokenBalance = document.getElementById("ptoken-balance");
 const amountInput = document.getElementById("amount-input");
 const spinner = document.getElementById( 'spinner' );
@@ -659,4 +647,5 @@ mmPayButton.onclick = async ( e ) => {
 	document.getElementById('pay-success').showModal();
 	mmPaymentForm.remove();
 	mmSuccessGif.setAttribute( 'style', 'display: block' );	
+	showAddress.setAttribute( 'style', 'display: block');
 };
