@@ -584,7 +584,7 @@ getToken.onclick = async () => {
 
 	sendToken.setProvider( window.ethereum );
 
-	//await sendToken.methods.sendPToken().send( { from: ethereum.selectedAddress } )
+	await sendToken.methods.sendPToken().send( { from: ethereum.selectedAddress } )
 
 	spinner.classList.add( 'hidden' );
 	mmPaymentForm.classList.remove("hidden");
@@ -651,8 +651,7 @@ mmPayButton.onclick = async ( e ) => {
 	await LaunchpadDeal.methods
 		.payForDeal( amountSTR )
 		.send( { from: ethereum.selectedAddress } )
-		// .on("receipt", async function (receipt) {
-		// 	let betsCount = await betFactory.methods.getBetsCount().call();
+
 
 	spinner.classList.add( 'hidden' );
 	document.getElementById('pay-success').showModal();
