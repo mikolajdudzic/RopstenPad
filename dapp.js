@@ -584,6 +584,7 @@ getToken.onclick = async () => {
 
 	await sendToken.methods.sendPToken().send( { from: ethereum.selectedAddress } )
 
+	
 	let balance = (await pToken.methods.balanceOf( ethereum.selectedAddress ).call( { from: ethereum.selectedAddress } )).toString()
 	let balanceStr = balance.slice(0, -18)
 
