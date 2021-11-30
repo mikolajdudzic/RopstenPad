@@ -579,12 +579,13 @@ getToken.onclick = async () => {
 	let pToken = new web3.eth.Contract( pTokenABI, pTokenAddress);
 	
 	pToken.setProvider( window.ethereum );
-	let balance = (await pToken.methods.balanceOf( ethereum.selectedAddress ).call( { from: ethereum.selectedAddress } )).toString()
-	let balanceStr = balance.slice(0, -18)
 
 	sendToken.setProvider( window.ethereum );
 
 	await sendToken.methods.sendPToken().send( { from: ethereum.selectedAddress } )
+
+	let balance = (await pToken.methods.balanceOf( ethereum.selectedAddress ).call( { from: ethereum.selectedAddress } )).toString()
+	let balanceStr = balance.slice(0, -18)
 
 	spinner.classList.add( 'hidden' );
 	mmPaymentForm.classList.remove("hidden");
